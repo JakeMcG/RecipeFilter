@@ -12,6 +12,13 @@ recipe_selectors = [
 	'div[itemtype="https://schema.org/Recipe"]',
 ]
 
+remove_selectors = [
+	'img',
+	'.adthrive-ad', // ads - not working
+
+	// 'a', // undesired side effects - needs work
+]
+
 const closeButton = document.createElement('button');
 closeButton.id = '_rf_closebtn';
 closeButton.classList.add('_rfbtn');
@@ -44,6 +51,14 @@ function showPopup(){
 		if (original){
 			// clone the matched element
 			let clone = original.cloneNode(true);
+
+			// remove problematic elements
+			remove_selectors.forEach(function(s) {
+				clone.querySelectorAll(s).forEach(function(n) {
+					n.remove();
+				})
+			})
+
 			clone.id = '_rf_highlight';
 			// add some control buttons
 			clone.prepend(controls);
