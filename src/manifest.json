@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Recipe Filter",
   "short_name": "Recipe Filter",
   "version": "0.3",
@@ -11,7 +11,7 @@
     "storage"
   ],
   "options_page": "html/options.html",
-  "browser_action": {
+  "action": {
     "default_title": "Recipe Filter",
     "default_icon": "img/icon-128.png"
   },
