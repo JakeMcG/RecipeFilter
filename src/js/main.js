@@ -39,10 +39,17 @@ function hidePopup(){
 	let highlight = document.getElementById('_rf_highlight');
 	highlight.style.transition = 'opacity 400ms';
 	highlight.style.opacity = 0;
+}
 
-	setTimeout(function() {
-		highlight.parentNode.removeChild(highlight);
-	}, 400);
+chrome.runtime.onMessage.addListener(
+	function(request) {
+	  	if (request.action == "reshow_popup")
+			reshowPopup();
+});
+  
+function reshowPopup() {
+	let existingPopup = document.getElementById('_rf_highlight');
+	existingPopup.style.opacity = 1;
 }
 
 function showPopup(){

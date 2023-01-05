@@ -8,7 +8,8 @@
           "128": "img/icon-128.png"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "contextMenus"
   ],
   "options_page": "html/options.html",
   "action": {
@@ -23,5 +24,8 @@
       "css": ["css/recipe_filter.css"],
       "js": ["js/main.js"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  }
 }
