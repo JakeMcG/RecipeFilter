@@ -15,9 +15,13 @@ recipe_selectors = [
 remove_selectors = [
 	'img',
 	'.adthrive-ad', // ads - not working
+	'.wprm-template-trc-header'
 
 	// 'a', // undesired side effects - needs work
 ]
+
+titles = 'h1, h2, h3, h4, h5, h6';
+items = 'li';
 
 const closeButton = document.createElement('button');
 closeButton.id = '_rf_closebtn';
@@ -69,6 +73,16 @@ function toggleFocus() {
 			recipe.querySelectorAll(s).forEach(function(n) {
 				n.remove();
 			})
+		})
+
+		// apply slimmer formatting
+		recipe.querySelectorAll(titles).forEach(function(n) {
+			console.log(n.innerHTML);
+			n.classList.add("_rfhdr");
+		})
+
+		recipe.querySelectorAll(items).forEach(function(n) {
+			n.classList.add("_rfitem");
 		})
 
 		focus = true;

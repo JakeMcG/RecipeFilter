@@ -38,3 +38,15 @@
 	text-decoration: none;
 	float: right;
 }
+
+._rfhdr {
+	font-size: medium !important;
+}
+
+._rfitem {
+	font-size: small !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
